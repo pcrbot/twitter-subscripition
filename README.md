@@ -8,8 +8,9 @@
 ```python
 subr_dic = {}
 ```
+2. 将 twitter_subscription.py 拷贝到 hoshino/modules/tiwtter/ 文件夹下
 
-2. 将以下三行添加到hoshino/modules/tiwtter/twitter.py 中的 twitter_poller 前，并注释掉原版 @sv.scheduled_job
+2. 将以下三行添加到 hoshino/modules/tiwtter/twitter.py 中的 twitter_poller 前，并注释掉原版 @sv.scheduled_job
 ```python
 from .twitter_subscription import TwitterSubscription
 t_sub = TwitterSubscription(latest_info, poll_new_tweets)
@@ -25,10 +26,13 @@ async def twitter_poller():
 以下均需at bot或呼叫bot，订阅列表
 
 ### 订阅推+twitter_id
+
 如命令所示
 
 ### 停止看推+twitter_id
+
 如命令所示
 
 ### 本群订阅
+
 查看本群所有订阅
