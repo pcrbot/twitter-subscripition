@@ -4,7 +4,12 @@
 
 ## 插入方法
 
-将以下三行添加到hoshino/modules/tiwtter/twitter.py 中的 twitter_poller 前，并注释掉原版 @sv.scheduled_job
+1. 清空原版全局推送订阅列表 subr_dic
+```python
+subr_dic = {}
+```
+
+2. 将以下三行添加到hoshino/modules/tiwtter/twitter.py 中的 twitter_poller 前，并注释掉原版 @sv.scheduled_job
 ```python
 from .twitter_subscription import TwitterSubscription
 t_sub = TwitterSubscription(latest_info, poll_new_tweets)
@@ -13,11 +18,6 @@ t_sub.register_commands()
 
 #@sv.scheduled_job('interval', seconds=_freq)
 async def twitter_poller():
-```
-
-如果不需要原版的全局推送，记得清空 subr_dic
-```python
-subr_dic = {}
 ```
 
 ## 使用方法
